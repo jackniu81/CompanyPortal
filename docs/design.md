@@ -131,7 +131,7 @@ export const api = process.env.NEXT_PUBLIC_USE_MOCK === 'false' ? strapi : mock;
 ### 2.3 第 2 步验收
 
 - 所有页面 mock 跑通，PC/移动端正常
-- `/cn` `/en` 双语路由都能渲染
+- `/zh` `/en` 双语路由都能渲染
 - 表单提交有成功/失败提示
 - `NEXT_PUBLIC_USE_MOCK=false` 时编译通过
 
@@ -152,7 +152,7 @@ export const api = process.env.NEXT_PUBLIC_USE_MOCK === 'false' ? strapi : mock;
 | `site-setting` | Single | siteName, logo, nav 组件, footer 组件, SEO | 🟢 |
 | `form-submission` | Collection | name, email, phone, company, message, sourcePage, status(enum new/processing/done) | 🟢 模型本身 |
 
-- 全部模型开启 i18n（🟢 后台开关）
+- 除 `form-submission` 外全部模型开启 i18n（🟢 后台开关）；`form-submission` 是用户提交数据，**不启用** i18n
 - RBAC 角色与权限（🟢 后台点选）
 - 媒体库、版本历史、审计（🟢 自带）
 
@@ -161,7 +161,7 @@ export const api = process.env.NEXT_PUBLIC_USE_MOCK === 'false' ? strapi : mock;
 | 项 | 类型 | 说明 |
 | --- | --- | --- |
 | `lib/api/strapi.ts` | 🔴 | fetch + populate 参数 + 图片 URL 拼接 + richtext 解析 + locale 透传 |
-| Next Route Handler `/contact/submit` | 🟡 | 服务端带 token 转发到 Strapi，前端不暴露 token |
+| Next Route Handler `/contact/submit` | 🟡 | 服务端带 token 转发到 Strapi，前端不暴露 token。⚠️ 纯静态导出（`output: 'export'`）不支持 Route Handler，上线时该端点需用 CDN 边缘函数（Cloudflare Workers / Vercel Edge Functions）或轻量服务器承载 |
 | 表单防刷/人机验证 | 🟡 | hCaptcha 校验 + IP 限流（中间件或 controller） |
 | 提交成功邮件通知 | 🟡（可选） | Strapi lifecycle `afterCreate` 钩子 + nodemailer |
 | 留言导出 CSV | 🟡（可选） | Strapi 自定义 controller |
@@ -177,7 +177,7 @@ export const api = process.env.NEXT_PUBLIC_USE_MOCK === 'false' ? strapi : mock;
 
 ```
 NEXT_PUBLIC_USE_MOCK=false
-NEXT_PUBLIC_STRAPI_URL=[https://api.xxx.com](https://api.xxx.com)
+NEXT_PUBLIC_STRAPI_URL=https://api.xxx.com
 STRAPI_TOKEN=只读token（仅服务端使用）
 ```
 
@@ -200,11 +200,11 @@ STRAPI_TOKEN=只读token（仅服务端使用）
 
 | M | 里程碑 | 主要交付 | 预估工作量 | 验收 |
 | --- | --- | --- | --- | --- |
-| **M1 架构与脚手架** | 项目骨架跑通 | Next 初始化、Tailwind、i18n 双语路由、Header/Footer、`lib/api` 抽象层、mock 数据结构 | 2–3 天 | 双语首页能跑，所有页面路由 404 但不报错 |
+| **M1 架构与脚手架** | 项目骨架跑通 | Next 初始化、Tailwind、i18n 双语路由、Header/Footer、`lib/api` 抽象层、mock 数据结构 | 2–3 天 | 双语首页能跑，其余页面路由骨架可访问且不报错 |
 | **M2 前端页面（mock）** | 全部 UI 完成 | 6 个页面 + 列表/详情 + 表单 UI + 响应式 + SEO | 8–12 天 | mock 数据下 PC/移动端所有页面可点可看，中英切换正常 |
 | **M3 Strapi 后台搭建** | 内容可录入 | 本地 Strapi+PG、8 个模型、i18n、RBAC、媒体库、示例内容 | 2–3 天 | 后台能登录、能录入中英双语项目/新闻/服务 |
 | **M4 前后端联调** | 真实数据上线前端 | `strapi.ts` 字段映射、逐页接真实 API、图片优化、表单 Route Handler | 4–6 天 | `USE_MOCK=false` 下所有页面数据来自 Strapi，表单可提交入库 |
-| **M5 部署上线** | 公网可访问 | Docker 化 Strapi+PG、Nginx、HTTPS、CDN 静态发布、备份脚本、第三方统计 | 2–3 天 | 域名可访问，HTTPS 正常，改 Strapi 内容可生效，数据库每日备份 |
+| **M5 部署上线** | 公网可访问 | Docker 化 Strapi+PG、Nginx、HTTPS、CDN 静态发布、表单提交端点（边缘函数/轻量服务器）、备份脚本、第三方统计 | 2–3 天 | 域名可访问，HTTPS 正常，表单可提交，改 Strapi 内容可生效，数据库每日备份 |
 | **M6 验收与交付** | 客户验收 | 走查清单、使用文档（如何在 Strapi 改内容）、培训 | 1–2 天 | 客户能独立在后台更新项目/新闻/服务，前台正确显示 |
 
 **总工期估算：约 19–29 个工作日（单人）；2 人并行可压到 15–20 天。**
@@ -219,7 +219,7 @@ STRAPI_TOKEN=只读token（仅服务端使用）
 ### Epic 1 · 脚手架（对应 M1）
 
 - `E1-1` 初始化 Next.js App Router + TypeScript + ESLint + Tailwind
-- `E1-2` 接入 next-intl（或原生 i18n），配置 `/cn` `/en` 双语路由与语言切换
+- `E1-2` 接入 next-intl（或原生 i18n），配置 `/zh` `/en` 双语路由与语言切换（与 Strapi 的 zh-Hans / en 建立 locale 映射）
 - `E1-3` 全局布局：Header（移动端汉堡菜单）、Footer、返回顶部
 - `E1-4` 建立 `lib/api` 抽象层：`types.ts` / `index.ts` / `mock.ts` / `strapi.ts` 空实现
 - `E1-5` 配置 `next.config.js`：图片 remotePatterns、环境变量、SEO 默认值
@@ -240,15 +240,15 @@ STRAPI_TOKEN=只读token（仅服务端使用）
 
 - `E3-1` 本地 Strapi v5 + PostgreSQL 跑通
 - `E3-2` 创建 8 个内容模型与字段（home/project/service/article/about/contact/site-setting/form-submission）
-- `E3-3` 开启 i18n（zh-Hans / en），录入 3 条示例项目 + 2 条新闻 + 4 项服务
-- `E3-4` RBAC：管理员 / 编辑 / 只读 Token 权限配置
+- `E3-3` 开启 i18n（zh-Hans / en，form-submission 除外），录入 3 条示例项目 + 2 条新闻 + 4 项服务
+- `E3-4` RBAC：管理员 / 编辑 / 只读 Token + 仅 form-submission 可写 Token 权限配置
 - `E3-5` 媒体库上传配置（本地路径，后续可切 OSS）
 
 ### Epic 4 · 前后端联调（对应 M4）
 
 - `E4-1` 实现 `strapi.ts`：fetch 封装、populate、locale、图片 URL 拼接、richtext 渲染
 - `E4-2` 逐页替换 mock：首页 → 项目 → 服务 → 新闻 → 关于 → 联系
-- `E4-3` 表单提交 Route Handler：服务端带 token 转发 + 人机验证 + 简单限流
+- `E4-3` 表单提交 Route Handler：服务端带 token 转发 + 人机验证 + 简单限流（注意静态导出限制，见 3.2）
 - `E4-4` Next `<Image>` 接 Strapi 图片，配置 CDN 图片域名
 - `E4-5` 修联调 bug：字段缺失、多语言回退、404、分页
 
@@ -261,6 +261,7 @@ STRAPI_TOKEN=只读token（仅服务端使用）
 - `E5-5` CORS 白名单、Strapi 后台 IP 限制
 - `E5-6` PostgreSQL 每日 pg_dump 定时任务 + uploads 卷备份
 - `E5-7` 接入第三方统计脚本（Plausible / 百度统计）
+- `E5-8` 表单提交端点部署：CDN 边缘函数或轻量服务器承载 `/contact/submit`（静态导出不支持 Route Handler）
 
 ### Epic 6 · 验收交付（对应 M6）
 

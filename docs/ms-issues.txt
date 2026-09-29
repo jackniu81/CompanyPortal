@@ -16,6 +16,7 @@ gh label create milestone:m5 --color c50e5a --description "M5 部署"
 gh label create milestone:m6 --color c50e5a --description "M6 验收"
 
 #!/usr/bin/env bash
+# 注意：本脚本为 bash 语法，Windows 下请在 Git Bash / WSL 中运行（PowerShell 无法直接执行）
 set -e
 
 REPO="your-name/design-studio-site"   # ← 改成你的仓库
@@ -44,26 +45,27 @@ for name in "${!LABELS[@]}"; do
   gh label create "$name" --color "$color" --description "$desc" --repo "$REPO" 2>/dev/null || true
 done
 
-# ---- 2. 建 issue 函数 ----
+# ---- 2. 建 issue 函数（失败不中断，便于脚本重跑续建）----
 make() {
   local title="$1"; local labels="$2"; local body="$3"
-  gh issue create --repo "$REPO" --title "$title" --label "$labels" --body "$body"
+  gh issue create --repo "$REPO" --title "$title" --label "$labels" --body "$body" \
+    || echo "⚠️ 创建失败（可能已存在）：$title"
 }
 
 # ---- 3. M1 ----
 make "M1-1 初始化 Next.js + TypeScript + Tailwind" \
   "front,milestone:m1" \
-" - [ ] create next-app (App Router, TS, ESLint)
+" - [ ] create next-app (App Router, TS, ESLint)，包管理用 pnpm
  - [ ] 接入 TailwindCSS，配置 design tokens
  - [ ] 目录结构：app / components / lib / content
- - [ ] 跑通 npm run dev"
+ - [ ] 跑通 pnpm dev"
 
 make "M1-2 接入中英双语路由" \
   "front,i18n,milestone:m1" \
-" - [ ] 配置 [locale] 动态段（cn / en）
+" - [ ] 配置 [locale] 动态段（zh / en，与 Strapi 的 zh-Hans / en 建立映射）
  - [ ] 语言切换组件
  - [ ] 静态文案字典
- - [ ] /cn 与 /en 都能渲染"
+ - [ ] /zh 与 /en 都能渲染"
 
 make "M1-3 全局布局 Header / Footer" \
   "front,responsive,milestone:m1" \
@@ -96,25 +98,29 @@ make "M2-8 全站响应式走查"        "front,responsive,milestone:m2" "- [ ] 
 make "M2-9 SEO metadata"          "front,seo,milestone:m2"        "- [ ] generateMetadata\n- [ ] sitemap\n- [ ] robots"
 
 # ---- M3 ----
-make "M3-1 Strapi + PG 本地跑通"   "strapi,backend,milestone:m3"  "- [ ] create-strapi-app\n- [ ] 切换 PostgreSQL\n- [ ] 管理员账号"
-make "M3-2 创建内容模型"          "strapi,i18n,milestone:m3"      "- [ ] 8 个模型\n- [ ] 开启 i18n zh-Hans / en\n- [ ] 字段与关联"
-make "M3-3 RBAC 与 API Token"     "strapi,backend,milestone:m3"  "- [ ] 角色：管理员 / 编辑\n- [ ] 只读 Token\n- [ ] 示例数据"
+make "M3-1 Strapi v5 + PG 本地跑通" "strapi,backend,milestone:m3"  "- [ ] create-strapi（锁定 v5）\n- [ ] 切换 PostgreSQL\n- [ ] 管理员账号"
+make "M3-2 创建内容模型"          "strapi,i18n,milestone:m3"      "- [ ] 8 个模型\n- [ ] 除 form-submission 外开启 i18n（zh-Hans / en）\n- [ ] 字段与关联"
+make "M3-3 RBAC 与 API Token"     "strapi,backend,milestone:m3"  "- [ ] 角色：管理员 / 编辑\n- [ ] 只读 Token + 仅 form-submission 可写的 Token\n- [ ] 示例数据"
 
 # ---- M4 ----
 make "M4-1 实现 lib/api/strapi.ts" "front,backend,milestone:m4"   "- [ ] fetch 封装\n- [ ] locale 透传\n- [ ] populate\n- [ ] 图片 URL 拼接\n- [ ] richtext 渲染"
 make "M4-2 逐页替换 mock"         "front,i18n,milestone:m4"      "- [ ] 首页\n- [ ] 项目\n- [ ] 服务\n- [ ] 新闻\n- [ ] 关于 / 联系"
-make "M4-3 表单提交 Route Handler" "backend,form,milestone:m4"   "- [ ] 服务端转发\n- [ ] hCaptcha\n- [ ] 限流\n- [ ] 入库"
+make "M4-3 表单提交 Route Handler" "backend,form,milestone:m4"   "- [ ] 服务端带 Token 转发（Token 不下发前端）\n- [ ] hCaptcha\n- [ ] IP 限流\n- [ ] 写入 form-submission\n- [ ] 注意：静态导出跑不了 Route Handler，需以 CDN 边缘函数 / 轻量服务器承载（与 M5-5 衔接）"
 make "M4-4 图片优化与 CDN"        "front,deploy,milestone:m4"     "- [ ] next/image\n- [ ] WebP/AVIF\n- [ ] 懒加载"
+make "M4-5 修联调 bug"            "front,backend,bug,milestone:m4" "- [ ] 字段缺失\n- [ ] 多语言回退（en 缺稿回退 zh-Hans）\n- [ ] 404 / not-found\n- [ ] 分页"
 
 # ---- M5 ----
 make "M5-1 Strapi + PG Docker 化" "deploy,milestone:m5"          "- [ ] docker-compose\n- [ ] 数据卷\n- [ ] .env"
 make "M5-2 Nginx + HTTPS"        "deploy,milestone:m5"           "- [ ] 反代\n- [ ] 证书\n- [ ] CORS\n- [ ] /admin 限制"
-make "M5-3 Next 静态产物发布 CDN" "deploy,milestone:m5"          "- [ ] build 脚本\n- [ ] 上传\n- [ ] 缓存策略"
-make "M5-4 备份与监控"            "deploy,milestone:m5"           "- [ ] pg_dump 定时\n- [ ] uploads 备份\n- [ ] 统计脚本"
+make "M5-3 Next 静态产物发布 CDN" "deploy,milestone:m5"          "- [ ] output:'export' 静态构建\n- [ ] build 脚本\n- [ ] 上传\n- [ ] 缓存策略"
+make "M5-4 备份与监控"            "deploy,milestone:m5"           "- [ ] pg_dump 定时\n- [ ] uploads 卷备份"
+make "M5-5 表单提交端点部署"      "deploy,backend,form,milestone:m5" "- [ ] CDN 边缘函数（Cloudflare Workers / Vercel Edge）或轻量服务器承载 /contact/submit\n- [ ] 与 Strapi 网络连通 + Token 环境变量"
+make "M5-6 接入第三方统计脚本"    "deploy,milestone:m5"           "- [ ] Plausible / 百度统计（覆盖原始需求「数据统计」）\n- [ ] UV/PV/来源/转化可查"
 
 # ---- M6 ----
-make "M6-1 走查清单"              "front,responsive,milestone:m6" "- [ ] 双语\n- [ ] 多端\n- [ ] 表单\n- [ ] HTTPS/SEO"
+make "M6-1 走查清单"              "front,responsive,milestone:m6" "- [ ] 双语\n- [ ] 多端\n- [ ] 表单\n- [ ] HTTPS/SEO/404"
 make "M6-2 交付文档 + 培训"        "milestone:m6"                  "- [ ] Strapi 使用文档\n- [ ] 账号清单\n- [ ] 客户培训"
+make "M6-3 上线后 1 周 bug 回归"   "bug,milestone:m6"              "- [ ] 收集线上反馈\n- [ ] 回归修复\n- [ ] 复验收"
 
 # ---- 可选 ----
 make "O-1 表单邮件通知"            "backend,form,enhancement"      "表单提交后自动邮件通知业务"

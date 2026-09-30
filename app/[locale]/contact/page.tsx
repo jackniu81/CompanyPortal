@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/sections/contact-form";
 import { Container } from "@/components/ui/container";
 import { api } from "@/lib/api";
 import { hasLocale } from "@/lib/content";
 import { getDictionary } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/contact">): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(locale)) return {};
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.pageMeta.contact.title,
+    description: dict.pageMeta.contact.description,
+  };
+}
 
 export default async function ContactPage({
   params,

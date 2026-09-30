@@ -3,6 +3,28 @@
     "title": "Design Studio Portal",
     "description": "A corporate portal: statically rendered Next.js front end with a Strapi CMS back office."
   },
+  "pageMeta": {
+    "works": {
+      "title": "Works",
+      "description": "A curated list of studio design projects."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Brand and digital product design services we offer."
+    },
+    "news": {
+      "title": "News",
+      "description": "Company updates and industry news."
+    },
+    "about": {
+      "title": "About",
+      "description": "The team, our story and milestones."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch to start your project."
+    }
+  },
   "common": {
     "done": "Done",
     "pending": "Pending",

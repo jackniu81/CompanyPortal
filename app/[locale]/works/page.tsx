@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/container";
 import { WorksExplorer } from "@/components/sections/works-explorer";
 import { api } from "@/lib/api";
 import { hasLocale } from "@/lib/content";
 import { getDictionary } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/works">): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(locale)) return {};
+  const dict = await getDictionary(locale);
+  return {
+    title: dict.pageMeta.works.title,
+    description: dict.pageMeta.works.description,
+  };
+}
 
 export default async function WorksPage({ params }: PageProps<"/[locale]/works">) {
   const { locale } = await params;

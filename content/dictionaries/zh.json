@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "设计公司官网",
+    "description": "Next.js 静态渲染前台 + Strapi 可视化内容后台的企业门户。"
+  },
+  "common": {
+    "done": "已完成",
+    "pending": "待办",
+    "language": "语言"
+  },
+  "home": {
+    "eyebrow": "M1 · 脚手架",
+    "name": "设计公司官网",
+    "tagline": "高端 · 双语 · 自适应",
+    "summary": "Next.js 静态渲染前台 + Strapi 可视化内容后台的企业门户。",
+    "checklistHeading": "脚手架验收",
+    "tokensHeading": "设计令牌"
+  },
+  "nav": {
+    "home": "首页",
+    "works": "项目",
+    "services": "服务",
+    "news": "新闻",
+    "about": "关于",
+    "contact": "联系"
+  }
+}

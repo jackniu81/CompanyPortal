@@ -185,18 +185,18 @@ const news: LocalizedData<NewsArticle[]> = {
       title: "工作室受邀参加设计系统公开讲座",
       date: "2024-05-18",
       cover: media("/mock/covers/news-talk.svg", 1600, 900, "公开讲座"),
-      excerpt: "高野在上海设计周分享 CMS 驱动的设计系统实践。",
+      excerpt: "王五在上海设计周分享 CMS 驱动的设计系统实践。",
       content:
-        "技术负责人高野受邀在上海设计周「系统之美」专场发言，以 FLUX 美术馆项目为例，讲解组件库与内容后台如何协同。\n\n讲座实录将整理成文章发布于本栏目。",
+        "技术负责人王五受邀在上海设计周「系统之美」专场发言，以 FLUX 美术馆项目为例，讲解组件库与内容后台如何协同。\n\n讲座实录将整理成文章发布于本栏目。",
     },
     {
       slug: "studio-new-office",
-      title: "工作室迁入永嘉路新空间",
+      title: "工作室迁入北京西城新空间",
       date: "2023-09-01",
       cover: media("/mock/covers/news-office.svg", 1600, 900, "新工作室"),
       excerpt: "三层复合空间集工作室、材料库与客户洽谈区于一体。",
       content:
-        "9 月起工作室迁至徐汇区永嘉路 300 号二层，新空间由团队自行设计改造：一层材料库、二层办公、三层洽谈与放映。\n\n空间改造延续了「克制」的基调：微水泥、原木与可变照明，欢迎预约来访。",
+        "9 月起工作室迁至西城区福泽路 300 号二层，新空间由团队自行设计改造：一层材料库、二层办公、三层洽谈与放映。\n\n空间改造延续了「克制」的基调：微水泥、原木与可变照明，欢迎预约来访。",
     },
   ],
   en: [
@@ -223,26 +223,26 @@ const news: LocalizedData<NewsArticle[]> = {
       title: "Studio invited to public talk on design systems",
       date: "2024-05-18",
       cover: media("/mock/covers/news-talk.svg", 1600, 900, "Public talk"),
-      excerpt: "Gao Ye shares our CMS-driven design system practice at Shanghai Design Week.",
+      excerpt: "Wang Wu shares our CMS-driven design system practice at Shanghai Design Week.",
       content:
-        "Head of technology Gao Ye spoke at the «Beauty of Systems» session, using the FLUX project to show how a component library and a content back office work together.\n\nA transcript will be published in this section.",
+        "Head of technology Wang Wu spoke at the «Beauty of Systems» session, using the FLUX project to show how a component library and a content back office work together.\n\nA transcript will be published in this section.",
     },
     {
       slug: "studio-new-office",
-      title: "Studio moves into its new space on Yongjia Road",
+      title: "Studio moves into its new space in west Beijing",
       date: "2023-09-01",
       cover: media("/mock/covers/news-office.svg", 1600, 900, "New studio"),
       excerpt: "Three floors combining studio, material library and client meeting rooms.",
       content:
-        "Since September the studio sits on the second floor of 300 Yongjia Road, redesigned by the team itself: material library below, studio in the middle, meeting and screening room above.\n\nThe interior keeps our restrained tone — micro-cement, raw oak and adjustable lighting. Visits are welcome by appointment.",
+        "Since September the studio sits on the second floor of 300 Fuze Road, Xicheng District, redesigned by the team itself: material library below, studio in the middle, meeting and screening room above.\n\nThe interior keeps our restrained tone — micro-cement, raw oak and adjustable lighting. Visits are welcome by appointment.",
     },
   ],
 };
 
 const siteSettings: LocalizedData<SiteSettings> = {
   zh: {
-    siteName: "拾贝设计",
-    logo: media("/mock/logo.svg", 120, 32, "拾贝设计"),
+    siteName: "天风工作室",
+    logo: media("/mock/logo.svg", 120, 32, "天风工作室"),
     nav: [
       { label: "首页", href: "/" },
       { label: "项目", href: "/works" },
@@ -252,10 +252,10 @@ const siteSettings: LocalizedData<SiteSettings> = {
       { label: "联系", href: "/contact" },
     ],
     footer: {
-      address: "上海市徐汇区永嘉路 300 号 2 层",
-      email: "hello@shell-design.example.com",
-      phone: "+86 21 6400 0000",
-      copyright: "© 2026 拾贝设计 Shell Design",
+      address: "北京市西城区福泽路 300 号 2 层",
+      email: "hello@skywind-studio.example.com",
+      phone: "+86 10 6400 0000",
+      copyright: "© 2026 天风工作室 Skywind Studio",
       social: [
         { label: "Instagram", href: "https://instagram.com" },
         { label: "Behance", href: "https://behance.net" },
@@ -264,8 +264,8 @@ const siteSettings: LocalizedData<SiteSettings> = {
     },
   },
   en: {
-    siteName: "Shell Design",
-    logo: media("/mock/logo.svg", 120, 32, "Shell Design"),
+    siteName: "Skywind Studio",
+    logo: media("/mock/logo.svg", 120, 32, "Skywind Studio"),
     nav: [
       { label: "Home", href: "/" },
       { label: "Works", href: "/works" },
@@ -275,10 +275,10 @@ const siteSettings: LocalizedData<SiteSettings> = {
       { label: "Contact", href: "/contact" },
     ],
     footer: {
-      address: "2F, 300 Yongjia Road, Xuhui, Shanghai",
-      email: "hello@shell-design.example.com",
-      phone: "+86 21 6400 0000",
-      copyright: "© 2026 Shell Design",
+      address: "2F, 300 Fuze Road, Xicheng, Beijing",
+      email: "hello@skywind-studio.example.com",
+      phone: "+86 10 6400 0000",
+      copyright: "© 2026 Skywind Studio",
       social: [
         { label: "Instagram", href: "https://instagram.com" },
         { label: "Behance", href: "https://behance.net" },
@@ -292,7 +292,7 @@ const homePage: LocalizedData<HomePage> = {
   zh: {
     hero: {
       title: "为品牌与空间做出克制的设计",
-      subtitle: "拾贝设计是一间跨品牌、空间与数字体验的设计工作室。",
+      subtitle: "天风工作室是一间跨品牌、空间与数字体验的设计工作室。",
       image: media("/mock/hero.svg", 2400, 1350, "工作室现场"),
       cta: { label: "查看项目", href: "/works" },
     },
@@ -303,7 +303,7 @@ const homePage: LocalizedData<HomePage> = {
   en: {
     hero: {
       title: "Restrained design for brands and spaces",
-      subtitle: "Shell Design is a studio working across brand, spatial and digital experience.",
+      subtitle: "Skywind Studio is a studio working across brand, spatial and digital experience.",
       image: media("/mock/hero.svg", 2400, 1350, "Studio at work"),
       cta: { label: "View works", href: "/works" },
     },
@@ -315,30 +315,30 @@ const homePage: LocalizedData<HomePage> = {
 
 const aboutPage: LocalizedData<AboutPage> = {
   zh: {
-    title: "关于拾贝",
-    intro: "拾贝设计成立于 2014 年，业务覆盖品牌识别、空间设计与数字体验，客户包括美术馆、消费品牌与地产开发商。",
+    title: "关于天风",
+    intro: "天风工作室成立于 2014 年，业务覆盖品牌识别、空间设计与数字体验，客户包括美术馆、消费品牌与地产开发商。",
     team: [
-      { name: "陈拾", role: "创始人 / 创意总监" },
-      { name: "Lena Wu", role: "设计总监" },
-      { name: "高野", role: "技术负责人" },
+      { name: "张三", role: "创始人 / 创意总监" },
+      { name: "李四", role: "设计总监" },
+      { name: "王五", role: "技术负责人" },
     ],
     timeline: [
-      { year: "2014", event: "工作室成立于上海" },
+      { year: "2014", event: "工作室成立于北京" },
       { year: "2019", event: "成立数字体验组" },
       { year: "2023", event: "团队扩展至 14 人" },
       { year: "2025", event: "MONO 项目获 GD 提名" },
     ],
   },
   en: {
-    title: "About Shell Design",
-    intro: "Founded in Shanghai in 2014, Shell Design works across brand identity, spatial design and digital experience for museums, consumer brands and developers.",
+    title: "About Skywind Studio",
+    intro: "Founded in Beijing in 2014, Skywind Studio works across brand identity, spatial design and digital experience for museums, consumer brands and developers.",
     team: [
-      { name: "Shi Chen", role: "Founder / Creative Director" },
-      { name: "Lena Wu", role: "Design Director" },
-      { name: "Gao Ye", role: "Head of Technology" },
+      { name: "Zhang San", role: "Founder / Creative Director" },
+      { name: "Li Si", role: "Design Director" },
+      { name: "Wang Wu", role: "Head of Technology" },
     ],
     timeline: [
-      { year: "2014", event: "Studio founded in Shanghai" },
+      { year: "2014", event: "Studio founded in Beijing" },
       { year: "2019", event: "Digital experience practice starts" },
       { year: "2023", event: "Team grows to 14" },
       { year: "2025", event: "MONO nominated for the GD award" },
@@ -350,9 +350,9 @@ const contactPage: LocalizedData<ContactPage> = {
   zh: {
     title: "联系我们",
     info: {
-      address: "上海市徐汇区永嘉路 300 号 2 层",
-      email: "hello@shell-design.example.com",
-      phone: "+86 21 6400 0000",
+      address: "北京市西城区福泽路 300 号 2 层",
+      email: "hello@skywind-studio.example.com",
+      phone: "+86 10 6400 0000",
       hours: "周一至周五 10:00–19:00",
     },
     formConfig: {
@@ -364,9 +364,9 @@ const contactPage: LocalizedData<ContactPage> = {
   en: {
     title: "Contact us",
     info: {
-      address: "2F, 300 Yongjia Road, Xuhui, Shanghai",
-      email: "hello@shell-design.example.com",
-      phone: "+86 21 6400 0000",
+      address: "2F, 300 Fuze Road, Xicheng, Beijing",
+      email: "hello@skywind-studio.example.com",
+      phone: "+86 10 6400 0000",
       hours: "Mon–Fri 10:00–19:00",
     },
     formConfig: {

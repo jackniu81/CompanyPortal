@@ -57,6 +57,10 @@
     "prevProject": "上一个项目",
     "nextProject": "下一个项目"
   },
+  "about": {
+    "teamHeading": "团队",
+    "timelineHeading": "发展历程"
+  },
   "news": {
     "prev": "上一页",
     "next": "下一页",

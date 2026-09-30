@@ -57,6 +57,10 @@
     "prevProject": "Previous project",
     "nextProject": "Next project"
   },
+  "about": {
+    "teamHeading": "Team",
+    "timelineHeading": "Milestones"
+  },
   "news": {
     "prev": "Previous",
     "next": "Next",

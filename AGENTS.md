@@ -1,6 +1,6 @@
 
-# AI assistant
-- Replay in CHINESE! 
+# AI
+- 回答我的问题时用**中文**
 
 
 <!-- BEGIN:nextjs-agent-rules -->

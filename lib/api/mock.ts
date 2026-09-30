@@ -166,19 +166,37 @@ const news: LocalizedData<NewsArticle[]> = {
       slug: "studio-wins-gd-award",
       title: "工作室获 GD 传达视觉奖",
       date: "2025-08-12",
-      cover: media("/mock/covers/news-award.jpg", 1600, 900, "获奖公告"),
+      cover: media("/mock/covers/news-award.svg", 1600, 900, "获奖公告"),
       excerpt: "MONO 咖啡品牌识别获年度传达视觉奖品牌类提名。",
       content:
-        "MONO 咖啡品牌识别从 340 件参赛作品中脱颖而出，获得品牌类年度提名。评委会认为其「以极少的元素完成了完整的叙述」。",
+        "MONO 咖啡品牌识别从 340 件参赛作品中脱颖而出，获得品牌类年度提名。\n\n评委会认为其「以极少的元素完成了完整的叙述」：一套字体、两种油墨、大量留白，把一杯黑咖啡的秩序感讲完整。\n\n获奖作品展将于 10 月在上海设计周期间亮相，届时同步公开项目方法论手册。",
     },
     {
       slug: "flux-museum-opens",
       title: "FLUX 美术馆正式开馆",
       date: "2024-11-02",
-      cover: media("/mock/covers/news-flux.jpg", 1600, 900, "FLUX 开馆"),
+      cover: media("/mock/covers/news-flux.svg", 1600, 900, "FLUX 开馆"),
       excerpt: "历时 14 个月设计的导视系统随新馆同步启用。",
       content:
-        "FLUX 美术馆新馆于 11 月 2 日开馆，工作室设计的实体导视与室内导航小程序同步上线，覆盖 6 个展厅与 3 层公共区域。",
+        "FLUX 美术馆新馆于 11 月 2 日开馆，工作室设计的实体导视与室内导航小程序同步上线，覆盖 6 个展厅与 3 层公共区域。\n\n导视系统与展陈内容共用一套 CMS：展讯更新一次，指示牌二维码与小程序同时生效。\n\n开馆首周客流超过 2 万人次，导航小程序日均使用 4000 次。",
+    },
+    {
+      slug: "design-system-talk",
+      title: "工作室受邀参加设计系统公开讲座",
+      date: "2024-05-18",
+      cover: media("/mock/covers/news-talk.svg", 1600, 900, "公开讲座"),
+      excerpt: "高野在上海设计周分享 CMS 驱动的设计系统实践。",
+      content:
+        "技术负责人高野受邀在上海设计周「系统之美」专场发言，以 FLUX 美术馆项目为例，讲解组件库与内容后台如何协同。\n\n讲座实录将整理成文章发布于本栏目。",
+    },
+    {
+      slug: "studio-new-office",
+      title: "工作室迁入永嘉路新空间",
+      date: "2023-09-01",
+      cover: media("/mock/covers/news-office.svg", 1600, 900, "新工作室"),
+      excerpt: "三层复合空间集工作室、材料库与客户洽谈区于一体。",
+      content:
+        "9 月起工作室迁至徐汇区永嘉路 300 号二层，新空间由团队自行设计改造：一层材料库、二层办公、三层洽谈与放映。\n\n空间改造延续了「克制」的基调：微水泥、原木与可变照明，欢迎预约来访。",
     },
   ],
   en: [
@@ -186,19 +204,37 @@ const news: LocalizedData<NewsArticle[]> = {
       slug: "studio-wins-gd-award",
       title: "Studio nominated for GD Communication Design Award",
       date: "2025-08-12",
-      cover: media("/mock/covers/news-award.jpg", 1600, 900, "Award announcement"),
+      cover: media("/mock/covers/news-award.svg", 1600, 900, "Award announcement"),
       excerpt: "MONO Coffee identity receives a brand-category nomination of the year.",
       content:
-        "Selected from 340 entries, the MONO Coffee identity was praised by the jury for «completing a full narrative with minimal elements».",
+        "Selected from 340 entries, the MONO Coffee identity earned a brand-category nomination of the year.\n\nThe jury praised it for «completing a full narrative with minimal elements»: one typeface, two inks, generous whitespace.\n\nThe winning works will tour during Shanghai Design Week in October, alongside a public methodology booklet.",
     },
     {
       slug: "flux-museum-opens",
       title: "FLUX Museum opens its new building",
       date: "2024-11-02",
-      cover: media("/mock/covers/news-flux.jpg", 1600, 900, "FLUX opening"),
+      cover: media("/mock/covers/news-flux.svg", 1600, 900, "FLUX opening"),
       excerpt: "The wayfinding system we spent 14 months on launches with the new wings.",
       content:
-        "FLUX Museum opened on November 2 with our physical wayfinding and indoor-navigation app covering six halls and three public floors.",
+        "FLUX Museum opened on November 2 with our physical wayfinding and indoor-navigation app covering six halls and three public floors.\n\nSignage and exhibition content share one CMS: update once, and every terminal reflects it immediately.\n\nThe first week drew over 20,000 visitors, with the guide app used 4,000 times a day.",
+    },
+    {
+      slug: "design-system-talk",
+      title: "Studio invited to public talk on design systems",
+      date: "2024-05-18",
+      cover: media("/mock/covers/news-talk.svg", 1600, 900, "Public talk"),
+      excerpt: "Gao Ye shares our CMS-driven design system practice at Shanghai Design Week.",
+      content:
+        "Head of technology Gao Ye spoke at the «Beauty of Systems» session, using the FLUX project to show how a component library and a content back office work together.\n\nA transcript will be published in this section.",
+    },
+    {
+      slug: "studio-new-office",
+      title: "Studio moves into its new space on Yongjia Road",
+      date: "2023-09-01",
+      cover: media("/mock/covers/news-office.svg", 1600, 900, "New studio"),
+      excerpt: "Three floors combining studio, material library and client meeting rooms.",
+      content:
+        "Since September the studio sits on the second floor of 300 Yongjia Road, redesigned by the team itself: material library below, studio in the middle, meeting and screening room above.\n\nThe interior keeps our restrained tone — micro-cement, raw oak and adjustable lighting. Visits are welcome by appointment.",
     },
   ],
 };

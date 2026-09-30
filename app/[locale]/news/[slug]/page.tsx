@@ -66,8 +66,7 @@ export default async function NewsDetailPage({
             width={article.cover.width}
             height={article.cover.height}
             className="mt-10 aspect-[16/9] w-full rounded-card object-cover shadow-card"
-            unoptimized
-            priority
+            preload
           />
 
           <div className="mt-12">

@@ -66,8 +66,7 @@ export default async function ProjectDetailPage({
           width={project.cover.width}
           height={project.cover.height}
           className="mt-10 aspect-[16/9] w-full rounded-card object-cover shadow-card"
-          unoptimized
-          priority
+          preload
         />
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]">

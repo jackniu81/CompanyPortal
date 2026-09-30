@@ -37,8 +37,7 @@ export function SiteHeader({
               width={settings.logo.width}
               height={settings.logo.height}
               className="h-8 w-auto"
-              unoptimized
-              priority
+              loading="eager"
             />
           </Link>
         </div>

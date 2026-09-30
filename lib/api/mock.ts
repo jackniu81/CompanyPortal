@@ -32,7 +32,7 @@ const projects: LocalizedData<Project[]> = {
       category: "空间设计",
       year: "2025",
       client: "私人业主",
-      cover: media("/mock/covers/azure-residence.jpg", 1600, 1000, "Azure 山居住宅"),
+      cover: media("/mock/covers/azure-residence.svg", 1600, 1000, "Azure 山居住宅"),
       gallery: [media("/mock/gallery/azure-1.jpg"), media("/mock/gallery/azure-2.jpg")],
       description:
         "以「借景」为核心的山地住宅改造：将大面积落地窗朝向谷地，室内以微水泥与原木构成安静底色。",
@@ -43,7 +43,7 @@ const projects: LocalizedData<Project[]> = {
       category: "品牌设计",
       year: "2025",
       client: "MONO Coffee",
-      cover: media("/mock/covers/mono-coffee.jpg", 1600, 1000, "MONO 咖啡品牌"),
+      cover: media("/mock/covers/mono-coffee.svg", 1600, 1000, "MONO 咖啡品牌"),
       gallery: [media("/mock/gallery/mono-1.jpg")],
       description:
         "从字体到包装的整套识别系统，以单色印刷与留白传达「一杯黑咖啡的秩序感」。",
@@ -54,7 +54,7 @@ const projects: LocalizedData<Project[]> = {
       category: "数字体验",
       year: "2024",
       client: "FLUX 美术馆",
-      cover: media("/mock/covers/flux-museum.jpg", 1600, 1000, "FLUX 美术馆导视"),
+      cover: media("/mock/covers/flux-museum.svg", 1600, 1000, "FLUX 美术馆导视"),
       gallery: [media("/mock/gallery/flux-1.jpg"), media("/mock/gallery/flux-2.jpg")],
       description:
         "结合实体导视与小程序室内导航的双通道方案，展讯更新经 CMS 即时同步到终端。",
@@ -67,7 +67,7 @@ const projects: LocalizedData<Project[]> = {
       category: "Spatial Design",
       year: "2025",
       client: "Private Client",
-      cover: media("/mock/covers/azure-residence.jpg", 1600, 1000, "Azure Mountain Residence"),
+      cover: media("/mock/covers/azure-residence.svg", 1600, 1000, "Azure Mountain Residence"),
       gallery: [media("/mock/gallery/azure-1.jpg"), media("/mock/gallery/azure-2.jpg")],
       description:
         "A mountain-house renovation built around borrowed scenery: floor-to-ceiling glazing faces the valley while micro-cement and raw oak set a quiet tone.",
@@ -78,7 +78,7 @@ const projects: LocalizedData<Project[]> = {
       category: "Brand Design",
       year: "2025",
       client: "MONO Coffee",
-      cover: media("/mock/covers/mono-coffee.jpg", 1600, 1000, "MONO Coffee identity"),
+      cover: media("/mock/covers/mono-coffee.svg", 1600, 1000, "MONO Coffee identity"),
       gallery: [media("/mock/gallery/mono-1.jpg")],
       description:
         "A full identity system from typeface to packaging, using monochrome printing and negative space to express the order of a black coffee.",
@@ -89,7 +89,7 @@ const projects: LocalizedData<Project[]> = {
       category: "Digital Experience",
       year: "2024",
       client: "FLUX Museum",
-      cover: media("/mock/covers/flux-museum.jpg", 1600, 1000, "FLUX Museum wayfinding"),
+      cover: media("/mock/covers/flux-museum.svg", 1600, 1000, "FLUX Museum wayfinding"),
       gallery: [media("/mock/gallery/flux-1.jpg"), media("/mock/gallery/flux-2.jpg")],
       description:
         "A dual-channel system pairing physical signage with an in-app indoor guide; exhibition updates sync from the CMS to every terminal.",
@@ -257,22 +257,22 @@ const homePage: LocalizedData<HomePage> = {
     hero: {
       title: "为品牌与空间做出克制的设计",
       subtitle: "拾贝设计是一间跨品牌、空间与数字体验的设计工作室。",
-      image: media("/mock/hero.jpg", 2400, 1350, "工作室现场"),
+      image: media("/mock/hero.svg", 2400, 1350, "工作室现场"),
       cta: { label: "查看项目", href: "/works" },
     },
-    featuredProjects: [],
-    servicePreview: [],
+    featuredProjects: projects.zh.slice(0, 3),
+    servicePreview: services.zh.slice(0, 3),
     aboutPreview: "十二年、四个学科、一支 14 人的团队——我们相信好设计来自约束。",
   },
   en: {
     hero: {
       title: "Restrained design for brands and spaces",
       subtitle: "Shell Design is a studio working across brand, spatial and digital experience.",
-      image: media("/mock/hero.jpg", 2400, 1350, "Studio at work"),
+      image: media("/mock/hero.svg", 2400, 1350, "Studio at work"),
       cta: { label: "View works", href: "/works" },
     },
-    featuredProjects: [],
-    servicePreview: [],
+    featuredProjects: projects.en.slice(0, 3),
+    servicePreview: services.en.slice(0, 3),
     aboutPreview: "Twelve years, four disciplines, a team of 14 — we believe good design comes from constraints.",
   },
 };

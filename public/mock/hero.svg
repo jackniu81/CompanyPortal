@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f4d6d"/>
+      <stop offset="1" stop-color="#111d2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1350" fill="url(#g)"/>
+  <circle cx="1750" cy="430" r="260" fill="#4b78a3" opacity="0.35"/>
+  <circle cx="1950" cy="880" r="140" fill="#d78a3f" opacity="0.25"/>
+  <text x="120" y="1230" font-family="sans-serif" font-size="64" fill="#e7eef5" opacity="0.6">Shell Design — Studio</text>
+</svg>

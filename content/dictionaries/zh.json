@@ -9,12 +9,15 @@
     "language": "语言"
   },
   "home": {
-    "eyebrow": "M1 · 脚手架",
-    "name": "设计公司官网",
-    "tagline": "高端 · 双语 · 自适应",
-    "summary": "Next.js 静态渲染前台 + Strapi 可视化内容后台的企业门户。",
-    "checklistHeading": "脚手架验收",
-    "tokensHeading": "设计令牌"
+    "featuredHeading": "精选项目",
+    "viewAllWorks": "查看全部项目",
+    "servicesHeading": "服务",
+    "viewAllServices": "全部服务",
+    "aboutHeading": "关于工作室",
+    "learnMore": "了解更多",
+    "ctaHeading": "有项目想聊？",
+    "ctaBody": "告诉我们你的想法与预算，两个工作日内回复。",
+    "ctaLabel": "联系我们"
   },
   "nav": {
     "home": "首页",

@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
-  <rect width="1600" height="1000" fill="#111d2a"/>
-  <g stroke="#4b78a3" stroke-width="10" fill="none">
+  <rect width="1600" height="1000" fill="#082a49"/>
+  <g stroke="#0f7fd6" stroke-width="10" fill="none">
     <path d="M200 800 H700 V300 H1400"/>
     <path d="M200 600 H500 V200"/>
   </g>
   <circle cx="1400" cy="300" r="24" fill="#d78a3f"/>
-  <text x="200" y="930" font-family="sans-serif" font-size="48" fill="#cbd9e8">FLUX Wayfinding</text>
+  <text x="200" y="930" font-family="sans-serif" font-size="48" fill="#b0d4f2">FLUX Wayfinding</text>
 </svg>

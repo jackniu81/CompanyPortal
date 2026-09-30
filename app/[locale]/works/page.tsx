@@ -23,6 +23,7 @@ export default async function WorksPage({ params }: PageProps<"/[locale]/works">
         <div className="mt-10">
           <WorksExplorer
             projects={projects.items}
+            locale={locale}
             labels={{
               all: dict.works.all,
               prev: dict.works.prev,

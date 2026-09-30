@@ -43,6 +43,20 @@
     "next": "Next",
     "paginationLabel": "Works pagination"
   },
+  "project": {
+    "back": "Back to works",
+    "client": "Client",
+    "year": "Year",
+    "category": "Category",
+    "descriptionHeading": "Design notes",
+    "galleryHeading": "Gallery",
+    "close": "Close",
+    "prevImage": "Previous",
+    "nextImage": "Next",
+    "counter": "Image %d",
+    "prevProject": "Previous project",
+    "nextProject": "Next project"
+  },
   "placeholder": {
     "building": "This page is under construction and will ship in the M2 milestone."
   }

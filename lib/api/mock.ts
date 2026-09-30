@@ -33,7 +33,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2025",
       client: "私人业主",
       cover: media("/mock/covers/azure-residence.svg", 1600, 1000, "Azure 山居住宅"),
-      gallery: [media("/mock/gallery/azure-1.jpg"), media("/mock/gallery/azure-2.jpg")],
+      gallery: [media("/mock/gallery/azure-1.svg"), media("/mock/gallery/azure-2.svg")],
       description:
         "以「借景」为核心的山地住宅改造：将大面积落地窗朝向谷地，室内以微水泥与原木构成安静底色。",
     },
@@ -44,7 +44,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2025",
       client: "MONO Coffee",
       cover: media("/mock/covers/mono-coffee.svg", 1600, 1000, "MONO 咖啡品牌"),
-      gallery: [media("/mock/gallery/mono-1.jpg")],
+      gallery: [media("/mock/gallery/mono-1.svg")],
       description:
         "从字体到包装的整套识别系统，以单色印刷与留白传达「一杯黑咖啡的秩序感」。",
     },
@@ -55,7 +55,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2024",
       client: "FLUX 美术馆",
       cover: media("/mock/covers/flux-museum.svg", 1600, 1000, "FLUX 美术馆导视"),
-      gallery: [media("/mock/gallery/flux-1.jpg"), media("/mock/gallery/flux-2.jpg")],
+      gallery: [media("/mock/gallery/flux-1.svg"), media("/mock/gallery/flux-2.svg")],
       description:
         "结合实体导视与小程序室内导航的双通道方案，展讯更新经 CMS 即时同步到终端。",
     },
@@ -68,7 +68,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2025",
       client: "Private Client",
       cover: media("/mock/covers/azure-residence.svg", 1600, 1000, "Azure Mountain Residence"),
-      gallery: [media("/mock/gallery/azure-1.jpg"), media("/mock/gallery/azure-2.jpg")],
+      gallery: [media("/mock/gallery/azure-1.svg"), media("/mock/gallery/azure-2.svg")],
       description:
         "A mountain-house renovation built around borrowed scenery: floor-to-ceiling glazing faces the valley while micro-cement and raw oak set a quiet tone.",
     },
@@ -79,7 +79,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2025",
       client: "MONO Coffee",
       cover: media("/mock/covers/mono-coffee.svg", 1600, 1000, "MONO Coffee identity"),
-      gallery: [media("/mock/gallery/mono-1.jpg")],
+      gallery: [media("/mock/gallery/mono-1.svg")],
       description:
         "A full identity system from typeface to packaging, using monochrome printing and negative space to express the order of a black coffee.",
     },
@@ -90,7 +90,7 @@ const projects: LocalizedData<Project[]> = {
       year: "2024",
       client: "FLUX Museum",
       cover: media("/mock/covers/flux-museum.svg", 1600, 1000, "FLUX Museum wayfinding"),
-      gallery: [media("/mock/gallery/flux-1.jpg"), media("/mock/gallery/flux-2.jpg")],
+      gallery: [media("/mock/gallery/flux-1.svg"), media("/mock/gallery/flux-2.svg")],
       description:
         "A dual-channel system pairing physical signage with an in-app indoor guide; exhibition updates sync from the CMS to every terminal.",
     },

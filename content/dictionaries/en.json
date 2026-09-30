@@ -70,7 +70,32 @@
   "service": {
     "back": "Back to services"
   },
-  "placeholder": {
-    "building": "This page is under construction and will ship in the M2 milestone."
+  "contact": {
+    "infoHeading": "Contact info",
+    "formHeading": "Send us a message",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "hours": "Hours",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message"
+    },
+    "optional": "optional",
+    "captchaLabel": "Human verification (placeholder: just check the box; real CAPTCHA lands in M4)",
+    "errors": {
+      "required": "%s is required",
+      "email": "Enter a valid email address",
+      "messageTooShort": "Message must be at least %d characters",
+      "captcha": "Please complete the human verification",
+      "generic": "Submission failed, please try again later"
+    },
+    "status": {
+      "submitting": "Sending…",
+      "success": "Thanks — we've received your message and will reply within two business days."
+    }
   }
 }

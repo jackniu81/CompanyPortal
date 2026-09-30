@@ -1,11 +1,39 @@
 import { notFound } from "next/navigation";
-import { RoutePlaceholder } from "@/components/sections/route-placeholder";
+import { Container } from "@/components/ui/container";
+import { NewsList } from "@/components/sections/news-list";
+import { api } from "@/lib/api";
 import { hasLocale } from "@/lib/content";
 import { getDictionary } from "@/lib/i18n";
 
-export default async function NewsPage({ params }: PageProps<"/[locale]/news">) {
+export default async function NewsPage({
+  params,
+}: PageProps<"/[locale]/news">) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
-  const dict = await getDictionary(locale);
-  return <RoutePlaceholder title={dict.nav.news} note={dict.placeholder.building} />;
+
+  const [dict, articles] = await Promise.all([
+    getDictionary(locale),
+    api.listNews(locale),
+  ]);
+
+  return (
+    <main className="flex flex-1 flex-col py-16 lg:py-20">
+      <Container>
+        <h1 className="text-display-sm text-ink lg:text-display-md">
+          {dict.nav.news}
+        </h1>
+        <div className="mt-10">
+          <NewsList
+            articles={articles.items}
+            locale={locale}
+            labels={{
+              prev: dict.news.prev,
+              next: dict.news.next,
+              paginationLabel: dict.news.paginationLabel,
+            }}
+          />
+        </div>
+      </Container>
+    </main>
+  );
 }

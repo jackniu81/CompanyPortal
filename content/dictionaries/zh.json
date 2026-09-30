@@ -57,6 +57,12 @@
     "prevProject": "上一个项目",
     "nextProject": "下一个项目"
   },
+  "news": {
+    "prev": "上一页",
+    "next": "下一页",
+    "paginationLabel": "新闻列表分页",
+    "back": "返回新闻列表"
+  },
   "service": {
     "back": "返回服务列表"
   },

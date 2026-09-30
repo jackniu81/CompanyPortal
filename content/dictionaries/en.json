@@ -57,6 +57,12 @@
     "prevProject": "Previous project",
     "nextProject": "Next project"
   },
+  "news": {
+    "prev": "Previous",
+    "next": "Next",
+    "paginationLabel": "News pagination",
+    "back": "Back to news"
+  },
   "service": {
     "back": "Back to services"
   },

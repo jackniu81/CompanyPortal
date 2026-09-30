@@ -23,5 +23,18 @@
     "news": "News",
     "about": "About",
     "contact": "Contact"
+  },
+  "layout": {
+    "mainNav": "Main navigation",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "footerContact": "Contact",
+    "footerFollow": "Follow us",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "placeholder": {
+    "building": "This page is under construction and will ship in the M2 milestone."
   }
 }

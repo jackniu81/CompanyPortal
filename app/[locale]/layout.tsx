@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/ui/container";
 import { LanguageSwitch } from "@/components/layout/language-switch";
-import { locales, hasLocale, htmlLangOf, type Locale } from "@/lib/content";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { api } from "@/lib/api";
+import { locales, hasLocale, htmlLangOf } from "@/lib/content";
 import { getDictionary } from "@/lib/i18n";
 import "../globals.css";
 
@@ -43,7 +45,10 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
 
-  const dict = await getDictionary(locale);
+  const [dict, settings] = await Promise.all([
+    getDictionary(locale),
+    api.getSiteSettings(locale),
+  ]);
 
   return (
     <html
@@ -51,15 +56,26 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <header className="border-b border-line bg-canvas">
-          <Container className="flex h-14 items-center justify-end gap-2">
-            <span className="text-xs tracking-caps uppercase text-ink-subtle">
-              {dict.common.language}
-            </span>
-            <LanguageSwitch locale={locale as Locale} label={dict.common.language} />
-          </Container>
-        </header>
+        <SiteHeader
+          locale={locale}
+          settings={settings}
+          labels={dict.layout}
+          languageSwitch={
+            <LanguageSwitch locale={locale} label={dict.common.language} />
+          }
+        />
         {children}
+        <SiteFooter
+          siteName={settings.siteName}
+          footer={settings.footer}
+          labels={{
+            contact: dict.layout.footerContact,
+            follow: dict.layout.footerFollow,
+            address: dict.layout.address,
+            email: dict.layout.email,
+            phone: dict.layout.phone,
+          }}
+        />
       </body>
     </html>
   );

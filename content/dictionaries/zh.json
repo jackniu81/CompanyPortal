@@ -23,5 +23,18 @@
     "news": "新闻",
     "about": "关于",
     "contact": "联系"
+  },
+  "layout": {
+    "mainNav": "主导航",
+    "menu": "菜单",
+    "closeMenu": "关闭菜单",
+    "footerContact": "联系方式",
+    "footerFollow": "关注我们",
+    "address": "地址",
+    "email": "邮箱",
+    "phone": "电话"
+  },
+  "placeholder": {
+    "building": "页面建设中，将在 M2 里程碑逐步上线。"
   }
 }

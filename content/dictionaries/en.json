@@ -9,12 +9,15 @@
     "language": "Language"
   },
   "home": {
-    "eyebrow": "M1 · Scaffold",
-    "name": "Design Studio Portal",
-    "tagline": "Premium · Bilingual · Responsive",
-    "summary": "A corporate portal: statically rendered Next.js front end with a Strapi CMS back office.",
-    "checklistHeading": "Scaffold checklist",
-    "tokensHeading": "Design tokens"
+    "featuredHeading": "Featured Works",
+    "viewAllWorks": "View all works",
+    "servicesHeading": "Services",
+    "viewAllServices": "All services",
+    "aboutHeading": "About the studio",
+    "learnMore": "Learn more",
+    "ctaHeading": "Have a project in mind?",
+    "ctaBody": "Tell us about your ideas and budget — we reply within two business days.",
+    "ctaLabel": "Contact us"
   },
   "nav": {
     "home": "Home",

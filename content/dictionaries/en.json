@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Design Studio Portal",
+    "description": "A corporate portal: statically rendered Next.js front end with a Strapi CMS back office."
+  },
+  "common": {
+    "done": "Done",
+    "pending": "Pending",
+    "language": "Language"
+  },
+  "home": {
+    "eyebrow": "M1 · Scaffold",
+    "name": "Design Studio Portal",
+    "tagline": "Premium · Bilingual · Responsive",
+    "summary": "A corporate portal: statically rendered Next.js front end with a Strapi CMS back office.",
+    "checklistHeading": "Scaffold checklist",
+    "tokensHeading": "Design tokens"
+  },
+  "nav": {
+    "home": "Home",
+    "works": "Works",
+    "services": "Services",
+    "news": "News",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

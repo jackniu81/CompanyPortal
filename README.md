@@ -1,8 +1,6 @@
 # CompanyPortal
 
-> 面向设计公司的**高端双语企业官网** —— 中英双语路由、SSG 静态渲染 + CDN 加速、CMS 可视化内容管理,基于 Next.js 16 + Tailwind CSS v4 的现代化全栈实现。
-
-工程化交付是它的另一重特点:每个模块都有明确的需求来源(GitHub issue)、独立 PR、生产构建与无头浏览器双重验收,动效与图片加载策略均经真实浏览器断言。
+> **完善的双语企业官网** —— 中英双语路由、SSG 静态渲染 + CDN 加速、CMS 可视化内容管理,基于 Next.js 16 + Tailwind CSS v4 的现代化全栈实现。
 
 ## 主要功能
 
@@ -12,6 +10,7 @@
 - **GSAP 动效**:Hero 入场时间轴、精选项目 ScrollTrigger 滚动逐张浮现、灯箱键盘导航
 - **响应式多端适配**:PC / 平板 / 移动断点,移动端抽屉导航
 - **图片加载策略**:LCP 图 `preload`、首屏 `eager`、折叠线以下自动懒加载,AVIF/WebP 就绪
+- **Strapi 集成**： CMS后台，依赖于Strapi，避免二次开发
 - **内容管理预留**:统一数据抽象层,当前由 mock 驱动,关闭开关即切换到 Strapi 契约实现
 
 ## 技术栈
@@ -25,7 +24,7 @@
 | i18n | `@formatjs/intl-localematcher` + `negotiator` |
 | 规范 | ESLint 9 + eslint-config-next |
 | 包管理 | pnpm 12 |
-| CMS 规划 | Strapi v5 + PostgreSQL(集成阶段,见 docs/todo.md) |
+| CMS 规划 | Strapi v5 + PostgreSQL|
 
 ## 实现亮点
 

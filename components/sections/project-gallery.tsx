@@ -58,7 +58,6 @@ export function ProjectGallery({
             fill
             sizes="(min-width: 1024px) 40rem, 100vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            unoptimized
           />
         </button>
       ))}
@@ -81,8 +80,7 @@ export function ProjectGallery({
               fill
               sizes="1024px"
               className="rounded-card object-contain"
-              unoptimized
-              priority
+              loading="eager"
             />
           </div>
           <div

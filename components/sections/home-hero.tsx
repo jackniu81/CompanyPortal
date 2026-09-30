@@ -53,8 +53,7 @@ export function HomeHero({
           width={hero.image.width}
           height={hero.image.height}
           className="aspect-[16/9] w-full rounded-card object-cover shadow-card"
-          unoptimized
-          priority
+          preload
         />
       </Container>
     </section>

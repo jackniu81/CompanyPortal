@@ -17,7 +17,6 @@ export function ProjectCard({
         width={project.cover.width}
         height={project.cover.height}
         className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        unoptimized
       />
       <div className="p-5">
         <p className="text-xs tracking-caps uppercase text-ink-subtle">

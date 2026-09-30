@@ -42,7 +42,6 @@ export function NewsList({
               width={article.cover.width}
               height={article.cover.height}
               className="aspect-[16/9] w-full rounded-field object-cover"
-              unoptimized
             />
             <div>
               <p className="text-xs tracking-caps uppercase text-ink-subtle">

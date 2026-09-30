@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 设计令牌：色板、字阶、断点、圆角、阴影统一在此声明，业务代码只引用语义类名 */
+@theme {
+  --breakpoint-xs: 30rem;
+
+  --color-brand-50: #f4f7fa;
+  --color-brand-100: #e7eef5;
+  --color-brand-200: #cbd9e8;
+  --color-brand-300: #a1bcd5;
+  --color-brand-400: #6f97bc;
+  --color-brand-500: #4b78a3;
+  --color-brand-600: #3a6088;
+  --color-brand-700: #2f4d6d;
+  --color-brand-800: #263d56;
+  --color-brand-900: #1b2f42;
+  --color-brand-950: #111d2a;
+
+  --color-accent-50: #fdf6ef;
+  --color-accent-100: #f9e8d8;
+  --color-accent-200: #f0caa8;
+  --color-accent-300: #e4a970;
+  --color-accent-400: #d78a3f;
+  --color-accent-500: #c26f27;
+  --color-accent-600: #a1551f;
+  --color-accent-700: #7f421c;
+  --color-accent-800: #5f3318;
+  --color-accent-900: #452714;
+  --color-accent-950: #2a170b;
+
+  --text-display-sm: 2rem;
+  --text-display-sm--line-height: 1.15;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-display-md: 2.75rem;
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.025em;
+  --text-display-lg: 3.5rem;
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.03em;
+
+  --radius-card: 1.25rem;
+  --radius-field: 0.625rem;
+
+  --shadow-card: 0 1px 2px rgb(16 22 29 / 0.04), 0 12px 32px -12px rgb(16 22 29 / 0.16);
+  --shadow-lift: 0 2px 4px rgb(16 22 29 / 0.06), 0 24px 60px -20px rgb(16 22 29 / 0.28);
+
+  --tracking-caps: 0.18em;
+
+  --container-page: 78rem;
+  --container-measure: 42rem;
 }
 
+:root {
+  --canvas: #ffffff;
+  --surface: #f7f8fa;
+  --surface-strong: #eceff3;
+  --line: #e2e6ec;
+  --ink: #10161d;
+  --ink-muted: #55606d;
+  --ink-subtle: #8b95a1;
+  --primary: #2f4d6d;
+  --on-primary: #ffffff;
+}
+
+/* 语义令牌与 next/font 注入的运行时变量绑定，用 inline 避免生成循环引用 */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
 }

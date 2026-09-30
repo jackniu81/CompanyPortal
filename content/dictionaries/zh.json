@@ -3,6 +3,28 @@
     "title": "设计公司官网",
     "description": "Next.js 静态渲染前台 + Strapi 可视化内容后台的企业门户。"
   },
+  "pageMeta": {
+    "works": {
+      "title": "项目",
+      "description": "工作室精选设计项目案例列表。"
+    },
+    "services": {
+      "title": "服务",
+      "description": "我们提供的品牌与数字产品设计服务。"
+    },
+    "news": {
+      "title": "新闻",
+      "description": "公司动态与行业资讯。"
+    },
+    "about": {
+      "title": "关于我们",
+      "description": "团队、故事与发展历程。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "告诉我们你的想法，开启你的项目。"
+    }
+  },
   "common": {
     "done": "已完成",
     "pending": "待办",

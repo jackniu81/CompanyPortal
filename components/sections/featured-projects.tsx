@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { ProjectCard } from "@/components/sections/project-card";
 import { localizedHref, type Locale } from "@/lib/content";
 import type { Project } from "@/lib/api";
 
@@ -30,30 +30,7 @@ export function FeaturedProjects({
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <article
-              key={project.slug}
-              className="group overflow-hidden rounded-card border border-line bg-surface shadow-card transition-shadow hover:shadow-lift"
-            >
-              <Image
-                src={project.cover.url}
-                alt={project.cover.alternativeText ?? project.title}
-                width={project.cover.width}
-                height={project.cover.height}
-                className="aspect-[16/10] w-full object-cover"
-                unoptimized
-              />
-              <div className="p-5">
-                <p className="text-xs tracking-caps uppercase text-ink-subtle">
-                  {project.category} · {project.year}
-                </p>
-                <h3 className="mt-2 text-lg font-medium text-ink">
-                  {project.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-muted">
-                  {project.description}
-                </p>
-              </div>
-            </article>
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </Container>

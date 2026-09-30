@@ -37,6 +37,12 @@
     "email": "Email",
     "phone": "Phone"
   },
+  "works": {
+    "all": "All",
+    "prev": "Previous",
+    "next": "Next",
+    "paginationLabel": "Works pagination"
+  },
   "placeholder": {
     "building": "This page is under construction and will ship in the M2 milestone."
   }

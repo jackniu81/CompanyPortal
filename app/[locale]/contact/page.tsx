@@ -52,7 +52,7 @@ export default async function ContactPage({
               {infoItems.map((item) => (
                 <div key={item.label}>
                   <dt className="text-ink-subtle">{item.label}</dt>
-                  <dd className="mt-1 text-ink">
+                  <dd className="mt-1 break-words text-ink">
                     {item.href ? (
                       <a
                         href={item.href}

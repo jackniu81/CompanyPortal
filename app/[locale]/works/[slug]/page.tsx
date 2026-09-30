@@ -44,7 +44,7 @@ export default async function ProjectDetailPage({
   const next = index >= 0 && index < all.items.length - 1 ? all.items[index + 1] : null;
 
   const navLink =
-    "inline-flex items-center gap-2 rounded-field border border-line bg-surface px-4 py-3 text-sm text-ink-muted transition-colors hover:border-brand-300 hover:text-ink";
+    "inline-flex max-w-full min-w-0 items-center gap-2 rounded-field border border-line bg-surface px-4 py-3 text-sm text-ink-muted transition-colors hover:border-brand-300 hover:text-ink";
 
   return (
     <main className="flex flex-1 flex-col py-16 lg:py-20">
@@ -100,15 +100,15 @@ export default async function ProjectDetailPage({
             <dl className="rounded-card border border-line bg-surface p-5 text-sm shadow-card">
               <div className="flex justify-between gap-4 border-b border-line pb-3">
                 <dt className="text-ink-subtle">{dict.project.category}</dt>
-                <dd className="text-right font-medium text-ink">{project.category}</dd>
+                <dd className="min-w-0 break-words text-right font-medium text-ink">{project.category}</dd>
               </div>
               <div className="flex justify-between gap-4 border-b border-line py-3">
                 <dt className="text-ink-subtle">{dict.project.year}</dt>
-                <dd className="text-right font-medium text-ink">{project.year}</dd>
+                <dd className="min-w-0 break-words text-right font-medium text-ink">{project.year}</dd>
               </div>
               <div className="flex justify-between gap-4 pt-3">
                 <dt className="text-ink-subtle">{dict.project.client}</dt>
-                <dd className="text-right font-medium text-ink">{project.client}</dd>
+                <dd className="min-w-0 break-words text-right font-medium text-ink">{project.client}</dd>
               </div>
             </dl>
           </aside>

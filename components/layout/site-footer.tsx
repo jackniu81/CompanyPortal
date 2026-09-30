@@ -27,7 +27,7 @@ export function SiteFooter({
             {labels.contact}
           </h2>
           <p className="mt-4 text-lg font-medium text-ink">{siteName}</p>
-          <address className="mt-3 flex flex-col gap-1 text-sm not-italic leading-relaxed text-ink-muted">
+          <address className="mt-3 flex flex-col gap-1 break-words text-sm not-italic leading-relaxed text-ink-muted">
             <span>
               <span className="sr-only">{labels.address}：</span>
               {footer.address}

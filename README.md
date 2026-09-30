@@ -11,7 +11,22 @@
 - **响应式多端适配**:PC / 平板 / 移动断点,移动端抽屉导航
 - **图片加载策略**:LCP 图 `preload`、首屏 `eager`、折叠线以下自动懒加载,AVIF/WebP 就绪
 - **Strapi 集成**： CMS后台，依赖于Strapi，避免二次开发
-- **内容管理预留**:统一数据抽象层,当前由 mock 驱动,关闭开关即切换到 Strapi 契约实现
+- **内容管理预留**:统一数据抽象层,当前由 mock 驱动,关闭开关即切换到 Strapi实现
+
+## 页面预览
+
+| 首页 | 首页(英文) |
+|---|---|
+| <img src="docs/images/home1.png" width="360" /> | <img src="docs/images/home-en.png" width="360" /> |
+
+| 项目 | 服务 |
+|---|---|
+| <img src="docs/images/project.png" width="360" /> | <img src="docs/images/service.png" width="360" /> |
+
+| 关于 | 联系 |
+|---|---|
+| <img src="docs/images/about.png" width="360" /> | <img src="docs/images/contact.png" width="360" /> |
+
 
 ## 技术栈
 

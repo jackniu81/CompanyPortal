@@ -29,9 +29,20 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(locale)) return {};
   const dict = await getDictionary(locale);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   return {
-    title: dict.meta.title,
+    metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+    title: {
+      default: dict.meta.title,
+      template: `%s | ${dict.meta.title}`,
+    },
     description: dict.meta.description,
+    openGraph: {
+      type: "website",
+      siteName: dict.meta.title,
+      title: dict.meta.title,
+      description: dict.meta.description,
+    },
     alternates: {
       languages: Object.fromEntries(locales.map((l) => [htmlLangOf(l), `/${l}`])),
     },

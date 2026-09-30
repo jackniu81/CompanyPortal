@@ -2,15 +2,18 @@
 
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/sections/project-card";
+import { localizedHref, type Locale } from "@/lib/content";
 import type { Project } from "@/lib/api";
 
 const PAGE_SIZE = 6;
 
 export function WorksExplorer({
   projects,
+  locale,
   labels,
 }: {
   projects: Project[];
+  locale: Locale;
   labels: {
     all: string;
     prev: string;
@@ -76,7 +79,11 @@ export function WorksExplorer({
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            href={localizedHref(locale, `/works/${project.slug}`)}
+          />
         ))}
       </div>
 

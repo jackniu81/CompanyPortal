@@ -43,6 +43,20 @@
     "next": "下一页",
     "paginationLabel": "项目列表分页"
   },
+  "project": {
+    "back": "返回项目列表",
+    "client": "客户",
+    "year": "年份",
+    "category": "类别",
+    "descriptionHeading": "设计说明",
+    "galleryHeading": "项目图集",
+    "close": "关闭",
+    "prevImage": "上一张",
+    "nextImage": "下一张",
+    "counter": "第 %d 张",
+    "prevProject": "上一个项目",
+    "nextProject": "下一个项目"
+  },
   "placeholder": {
     "building": "页面建设中，将在 M2 里程碑逐步上线。"
   }

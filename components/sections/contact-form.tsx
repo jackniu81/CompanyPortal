@@ -101,7 +101,7 @@ export function ContactForm({
   }
 
   const inputClass = (hasError: boolean) =>
-    `mt-2 w-full rounded-field border bg-canvas px-4 py-2.5 text-sm text-ink transition-colors placeholder:text-ink-subtle focus:outline-none ${
+    `mt-2 w-full rounded-field border bg-canvas px-4 py-2.5 text-base text-ink transition-colors placeholder:text-ink-subtle focus:outline-none ${
       hasError
         ? "border-accent-500 focus:border-accent-600"
         : "border-line focus:border-brand-500"

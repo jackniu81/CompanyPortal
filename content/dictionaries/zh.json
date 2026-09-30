@@ -70,7 +70,32 @@
   "service": {
     "back": "返回服务列表"
   },
-  "placeholder": {
-    "building": "页面建设中，将在 M2 里程碑逐步上线。"
+  "contact": {
+    "infoHeading": "联系方式",
+    "formHeading": "给我们留言",
+    "address": "地址",
+    "email": "邮箱",
+    "phone": "电话",
+    "hours": "工作时间",
+    "fields": {
+      "name": "姓名",
+      "email": "邮箱",
+      "phone": "电话",
+      "company": "公司/机构",
+      "message": "留言内容"
+    },
+    "optional": "选填",
+    "captchaLabel": "人机验证（占位：勾选即通过，真实验证在 M4 接入）",
+    "errors": {
+      "required": "请填写 %s",
+      "email": "邮箱格式不正确",
+      "messageTooShort": "留言不少于 %d 个字",
+      "captcha": "请先完成人机验证",
+      "generic": "提交失败，请稍后重试"
+    },
+    "status": {
+      "submitting": "发送中…",
+      "success": "已收到你的留言，我们会在两个工作日内回复。"
+    }
   }
 }

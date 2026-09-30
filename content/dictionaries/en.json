@@ -57,6 +57,9 @@
     "prevProject": "Previous project",
     "nextProject": "Next project"
   },
+  "service": {
+    "back": "Back to services"
+  },
   "placeholder": {
     "building": "This page is under construction and will ship in the M2 milestone."
   }

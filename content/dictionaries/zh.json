@@ -37,6 +37,12 @@
     "email": "邮箱",
     "phone": "电话"
   },
+  "works": {
+    "all": "全部",
+    "prev": "上一页",
+    "next": "下一页",
+    "paginationLabel": "项目列表分页"
+  },
   "placeholder": {
     "building": "页面建设中，将在 M2 里程碑逐步上线。"
   }

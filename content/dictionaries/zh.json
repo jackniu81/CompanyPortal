@@ -57,6 +57,9 @@
     "prevProject": "上一个项目",
     "nextProject": "下一个项目"
   },
+  "service": {
+    "back": "返回服务列表"
+  },
   "placeholder": {
     "building": "页面建设中，将在 M2 里程碑逐步上线。"
   }

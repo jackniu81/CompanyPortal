@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { ServiceCard } from "@/components/sections/service-card";
 import { localizedHref, type Locale } from "@/lib/content";
 import type { Service } from "@/lib/api";
 
@@ -29,15 +30,11 @@ export function ServicesPreview({
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div
+            <ServiceCard
               key={service.slug}
-              className="rounded-card border border-line bg-canvas p-5 shadow-card"
-            >
-              <h3 className="text-lg font-medium text-ink">{service.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                {service.summary}
-              </p>
-            </div>
+              service={service}
+              href={localizedHref(locale, `/services/${service.slug}`)}
+            />
           ))}
         </div>
       </Container>
